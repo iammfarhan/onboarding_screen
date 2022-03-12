@@ -1,6 +1,4 @@
-# onboarding
-
-A new Flutter project.
+A responsive Onboarding Screen UI - built using Flutter 💙
 
 Here is the Screenshots of UI💙🚀
 ![Screen1](https://user-images.githubusercontent.com/70325196/158018813-c5529031-6c94-43ca-a7a0-dbca8fd11287.png)
