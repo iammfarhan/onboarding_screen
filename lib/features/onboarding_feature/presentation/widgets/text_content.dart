@@ -12,15 +12,13 @@ class TextContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-        h,
-        textAlign: TextAlign.center,
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          fontSize: 16.sp,
-          color: lightTextColor,
-        ),
-  
+      h,
+      textAlign: TextAlign.center,
+      style: TextStyle(
+        fontWeight: FontWeight.w400,
+        fontSize: 16.sp,
+        color: lightTextColor,
+      ),
     );
   }
 }
-

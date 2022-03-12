@@ -17,11 +17,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: ScreenUtilInit(
-        builder: () =>Scaffold(
+        builder: () => Scaffold(
           backgroundColor: Colors.white,
           body: OnboardingScreen(),
         ),
-        designSize: Size(360,800),
+        designSize: Size(360, 800),
       ),
     );
   }

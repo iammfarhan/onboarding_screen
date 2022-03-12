@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'colors_onboarding.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class BoldHeading extends StatelessWidget {
   final String h;
 
@@ -13,16 +12,15 @@ class BoldHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-      Center(
-        child: Text(
-          h,
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 18..sp,
-            color: darkTextColor,
-          ),
+    return Center(
+      child: Text(
+        h,
+        style: TextStyle(
+          fontWeight: FontWeight.w600,
+          fontSize: 18..sp,
+          color: darkTextColor,
         ),
-      );
+      ),
+    );
   }
 }

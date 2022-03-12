@@ -62,7 +62,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Padding(
-      padding: EdgeInsets.only(left: 24.w, right: 24.w, top:88.h,bottom: 48.h),
+      padding:
+          EdgeInsets.only(left: 24.w, right: 24.w, top: 88.h, bottom: 48.h),
       child: Column(
         children: [
           SizedBox(
@@ -73,7 +74,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               fit: BoxFit.none,
             ),
           ),
-          SizedBox( 
+          SizedBox(
             height: 32.h,
           ),
           DotStepper(
