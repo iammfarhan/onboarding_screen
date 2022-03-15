@@ -4,6 +4,7 @@ import 'package:im_stepper/main.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:onboarding/features/onboarding_feature/presentation/onboarding_screen.dart';
+import 'package:onboarding/features/onboarding_feature/presentation/widgets/colors_onboarding.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,8 +19,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: ScreenUtilInit(
         builder: () => Scaffold(
-          backgroundColor: Colors.white,
-          body: OnboardingScreen(),
+          body: 
+          OnboardingScreen(),
         ),
         designSize: Size(360, 800),
       ),

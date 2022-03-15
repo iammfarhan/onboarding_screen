@@ -6,3 +6,5 @@ final lightBackgroundColor = Color(0xffE5E5E5);
 final lightTextColor = Color(0xff6F6F6F);
 final darkTextColor = Color(0xff1C1C1C);
 final dividerColor = Color(0xffF8F8F8);
+final whiteColor = Color(0xffFFFFFF);
+

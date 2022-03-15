@@ -1,9 +1,10 @@
-// ignore_for_file: unused_import, prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use
+// ignore_for_file: unused_import, prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use, dead_code
 
 import 'package:flutter/material.dart';
 import 'package:im_stepper/main.dart';
 import 'package:im_stepper/stepper.dart';
 import 'package:onboarding/features/onboarding_feature/presentation/widgets/heading.dart';
+import 'package:onboarding/features/onboarding_feature/presentation/widgets/last_button.dart';
 import 'package:onboarding/features/onboarding_feature/presentation/widgets/text_content.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:onboarding/features/onboarding_feature/presentation/widgets/text_list.dart';
@@ -43,7 +44,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           }
         },
         color: darkTextColor,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0)),
         textColor: Colors.white,
         child: Text(
           "Next",
@@ -54,6 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
             color: Colors.white,
           ),
         ),
+        elevation: 0,
       ),
     );
   }
@@ -61,57 +63,62 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.white,
         body: Padding(
-      padding:
-          EdgeInsets.only(left: 24.w, right: 24.w, top: 88.h, bottom: 48.h),
-      child: Column(
-        children: [
-          SizedBox(
-            height: 272.h,
-            width: 280.w,
-            child: Image(
-              image: AssetImage(images[activeStep]),
-              fit: BoxFit.none,
-            ),
-          ),
-          SizedBox(
-            height: 32.h,
-          ),
-          DotStepper(
-            activeStep: activeStep,
-            dotCount: dotCount,
-            shape: Shape.circle,
-            dotRadius: 6,
-            spacing: 8,
-            indicator: Indicator.worm,
-            onDotTapped: (dotIndex) {
-              setState(() {
-                activeStep = dotIndex;
-              });
-            },
-            fixedDotDecoration: FixedDotDecoration(
-              color: Color(0xffDADADA),
-            ),
-            indicatorDecoration: IndicatorDecoration(
-              color: darkTextColor,
-            ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(top: 32.h),
-            child: Container(
-              child: textlist[activeStep],
-            ),
-          ),
-          const Spacer(),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          padding:
+              EdgeInsets.only(left: 24.w, right: 24.w, top: 88.h, bottom: 48.h),
+          child: Column(
             children: [
-              skipbutton(),
-              nextbutton(),
+              SizedBox(
+                height: 272.h,
+                width: 280.w,
+                child: Image(
+                  image: AssetImage(images[activeStep]),
+                  fit: BoxFit.none,
+                ),
+              ),
+              SizedBox(
+                height: 32.h,
+              ),
+              DotStepper(
+                activeStep: activeStep,
+                dotCount: dotCount,
+                shape: Shape.circle,
+                dotRadius: 6,
+                spacing: 8,
+                indicator: Indicator.worm,
+                onDotTapped: (dotIndex) {
+                  setState(() {
+                    activeStep = dotIndex;
+                  });
+                },
+                fixedDotDecoration: FixedDotDecoration(
+                  color: Color(0xffDADADA),
+                ),
+                indicatorDecoration: IndicatorDecoration(
+                  color: darkTextColor,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 32.h),
+                child: Container(
+                  child: textlist[activeStep],
+                ),
+              ),
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  if (activeStep == 3) ...[
+                    LastButton(),
+                  ] else ...[
+                    skipbutton(),
+                    nextbutton(),
+                  ]
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    ));
+          ),
+        ));
   }
 }

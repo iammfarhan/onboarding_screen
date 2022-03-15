@@ -7,11 +7,13 @@ import 'package:onboarding/features/onboarding_feature/presentation/widgets/colo
 Widget skipbutton() {
   return SizedBox(
     height: 48.h,
-    width: 77.w,
+    width: 81.w,
     child: RaisedButton(
       onPressed: () {},
-      color: Color(0xffEAEAEA),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+      color: Colors.white,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.0),
+      side: BorderSide(color: Color(0xffEAEAEA) ),
+      ),
       textColor: Colors.white,
       child: Text(
         "Skip",
@@ -22,6 +24,7 @@ Widget skipbutton() {
           color: darkTextColor,
         ),
       ),
+      elevation: 0,
     ),
   );
 }
